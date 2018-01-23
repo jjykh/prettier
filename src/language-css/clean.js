@@ -84,6 +84,10 @@ function clean(ast, newObj) {
       }
     );
   }
+
+  if (ast.type === "media-url") {
+    newObj.value = newObj.value.replace(/ /g, "");
+  }
 }
 
 function cleanCSSStrings(value) {
